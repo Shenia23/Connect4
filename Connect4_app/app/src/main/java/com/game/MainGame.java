@@ -13,7 +13,7 @@ public class MainGame extends AppCompatActivity {
     private static final int N_COLS = 7;
     private static final int N_ROWS = 6;
 
-    private GameRules rules = new GameRules();
+    private ParametrosJuego param = new ParametrosJuego();
 
     private static char PLAYER = '+';
     private static char AI = 'o';
@@ -41,7 +41,7 @@ public class MainGame extends AppCompatActivity {
     }
 
     protected void first_move(){
-        if(rules.getFirstTurn()){
+        if(param.getFirstTurn()){
             turnSelector(true);
         } else{
             ai_move();
@@ -58,7 +58,7 @@ public class MainGame extends AppCompatActivity {
         displayPiece(col,row,false);
         turnSelector(false);
 
-        boolean winner = logic.ganador(PLAYER);
+        winner = logic.ganador(PLAYER);
         current_turns++;
         if(!winner && current_turns<=MAX_TURNS) {
             ai_move();
@@ -80,7 +80,7 @@ public class MainGame extends AppCompatActivity {
         }
         displayPiece(col,row,true);
 
-        boolean winner = logic.ganador(AI);
+        winner = logic.ganador(AI);
         current_turns++;
         if(!winner && current_turns<=MAX_TURNS) {
             turnSelector(true);
@@ -103,7 +103,7 @@ public class MainGame extends AppCompatActivity {
     protected void setDifficultyLabel(){
         TextView label = findViewById(R.id.label_difficulty);
         String label_text = "";
-        switch(rules.getDifficulty()){
+        switch(param.getDifficulty()){
             case 0:
                 label_text = "EASY";
                 break;

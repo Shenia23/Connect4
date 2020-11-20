@@ -1,15 +1,24 @@
 package com.game;
 
 public class ParametrosJuego {
-    boolean music=true;
-    boolean sounds=true;
-    boolean timeEnable=true;
-    boolean darktheme=true;
-    int selFicha=0;
-    int gameDifficulty=0;
+    boolean music =true;
+    boolean sounds =true;
+    boolean timeEnable =true;
+    boolean darktheme =true;
+    int selFicha =0;
+    int gameDifficulty =0;
+    private boolean isFirstTurn = false;
 
     public ParametrosJuego(){
 
+    }
+
+    public int getDifficulty() {
+        return gameDifficulty;
+    }
+
+    public boolean getFirstTurn(){
+        return isFirstTurn;
     }
 
     public void enMusic(){

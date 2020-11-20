@@ -17,9 +17,9 @@ import android.widget.TextView;
 public class MainMenu extends AppCompatActivity {
     ParametrosJuego paramJug;
     public void onCreate(Bundle savedInstanceState){
-    super.onCreate(savedInstanceState);
-    paramJug=new ParametrosJuego();
-    setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
+        paramJug=new ParametrosJuego();
+        setContentView(R.layout.activity_main);
     }
 
     public void goSettings(View view){
