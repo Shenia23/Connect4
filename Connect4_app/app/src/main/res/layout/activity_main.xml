@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF5E9AB"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="425dp"
+        android:layout_height="20dp"
+        android:background="#FFF5E9AB"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/info"
+            android:layout_width="22dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="150dp"
+            android:background="@mipmap/info_foreground"
+            android:onClick="showPopupWindowInfo" />
+
+        <ImageButton
+            android:id="@+id/rules"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:layout_marginRight="150dp"
+            android:onClick="showPopupWindowRules"
+            android:background="@mipmap/rules_foreground" />
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:layout_marginVertical="10dp"
+            android:background="@mipmap/settings_round"
+            android:onClick="goSettings"
+            android:orientation="horizontal" />
+    </LinearLayout>
+    >
+
+    <ImageView
+        android:layout_width="187dp"
+        android:layout_height="117dp"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/text_view_id"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:background="#FFE6E6E6"
+        android:gravity="center_horizontal"
+        android:text="@string/SelectGameDifficulty"
+        android:textAlignment="center"
+
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <RadioGroup
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/Easy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonDifClicked"
+            android:text="Easy" />
+
+        <RadioButton
+            android:id="@+id/Medium"
+            android:layout_width="wrap_content"
+            android:onClick="onRadioButtonDifClicked"
+            android:layout_height="wrap_content"
+            android:text="Medium" />
+
+        <RadioButton
+            android:id="@+id/Hard"
+            android:layout_width="wrap_content"
+            android:onClick="onRadioButtonDifClicked"
+            android:layout_height="wrap_content"
+            android:text="Hard" />
+
+        <RadioButton
+            android:id="@+id/Impossible"
+            android:layout_width="wrap_content"
+            android:onClick="onRadioButtonDifClicked"
+            android:layout_height="wrap_content"
+            android:text="Impossible" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/selection2"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:background="#FFE6E6E6"
+        android:gravity="center_horizontal"
+        android:text="@string/SelectColor"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <RadioGroup
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/fichaver"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginRight="20dp"
+            android:onClick="onRadioButtonColorClicked"
+            android:background="@mipmap/ic_launcher_ficha2_round"
+            android:button="@null" />
+
+        <RadioButton
+
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/ficharoj"
+            android:onClick="onRadioButtonColorClicked"
+            android:background="@mipmap/ic_launcher_round"
+            android:button="@null" />
+
+
+        <RadioButton android:checked="true"
+            android:id="@+id/fichaama"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:onClick="onRadioButtonColorClicked"
+            android:layout_marginRight="20dp"
+
+            android:background="@mipmap/ic_launcher_ficha1_round"
+            android:button="@null" />
+
+        <RadioButton
+            android:layout_width="84dp"
+            android:id="@+id/fichavio"
+            android:onClick="onRadioButtonColorClicked"
+            android:layout_height="84dp"
+            android:background="@mipmap/ic_launcher_ficha3_round"
+            android:button="@null" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/selection3"
+
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:background="#FFE6E6E6"
+
+        android:gravity="center_horizontal"
+        android:text="@string/SelectTheme"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <RadioGroup
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton android:checked="true"
+            android:id="@+id/LightTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonThemeClicked"
+            android:text="@string/OptionLight" />
+
+        <RadioButton
+            android:id="@+id/Darktheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonThemeClicked"
+            android:text="@string/OptionDark" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFE6E6E6"
+        android:padding="12dp"
+        android:text="Play"
+        android:onClick="goSettings"
+        android:textSize="26sp" />
+</LinearLayout>

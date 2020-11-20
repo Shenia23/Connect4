@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="backgroundLilac">#FFADB0DB</color>
+    <color name="backgroundYellow">#f5e9ab</color>
+    <color name="colorOrange">#f7ca7b</color>
+    <color name="colorLilac">#FF686191</color>
+    <color name="backgroundWhite">#FFFFFFFF</color>
+    <color name="textPurple">#27274a</color>
+    <color name="fichaverde">#FF2BC42E</color>
+    <color name="ficharoja">#FFDE2525</color>
+    <color name="fichaamarilla">#FFF7CA7B</color>
+    <color name="fichaoscura">#FF686191</color>
+    <color name="purple">#FFADB0DB</color>
+    <color name="ligthgrey">#FFE6E6E6</color>
+    <color name="main">#FFF5E9AB</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_700">#FFFFFFFF</color>
+    <color name="purple_200">#FFFFFFFF</color>
+    <color name="teal_200">#FFFFFFFF</color>
+</resources>
