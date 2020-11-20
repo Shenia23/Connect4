@@ -7,9 +7,11 @@ public class ParametrosJuego {
     boolean darktheme=true;
     int selFicha=0;
     int gameDifficulty=0;
+
     public ParametrosJuego(){
 
     }
+
     public void enMusic(){
         music=true;
     }
