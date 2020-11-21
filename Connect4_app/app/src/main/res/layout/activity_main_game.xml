@@ -162,13 +162,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/YouTurn"
+                android:id="@+id/PlayerTurnImage"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
                 android:background="@drawable/turn_shape" />
 
             <TextView
+                android:id="@+id/PlayerTurnLable"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="2dp"
@@ -189,13 +190,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/OpponentTurn"
+                android:id="@+id/OpponentTurnImage"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
                 android:background="@drawable/turn_shape" />
 
             <TextView
+                android:id="@+id/OpponentTurnLable"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="2dp"

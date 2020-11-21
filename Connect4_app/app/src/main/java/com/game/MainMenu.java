@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.content.Intent;
 
 public class MainMenu extends AppCompatActivity {
     ParametrosJuego paramJug;
@@ -20,6 +21,17 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         paramJug=new ParametrosJuego();
         setContentView(R.layout.activity_main);
+    }
+
+    public void goGame(View view) {
+        Button buttonGame = findViewById(R.id.bSearch);
+        buttonGame.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //setContentView(R.layout.activity_main_game);
+                Intent gameIntent = new Intent(getApplicationContext(), MainGame.class);
+                startActivity(gameIntent);
+            }
+        });
     }
 
     public void goSettings(View view){

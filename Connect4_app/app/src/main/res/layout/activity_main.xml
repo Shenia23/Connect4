@@ -199,6 +199,6 @@
         android:background="#FFE6E6E6"
         android:padding="12dp"
         android:text="Play"
-        android:onClick="goSettings"
+        android:onClick="goGame"
         android:textSize="26sp" />
 </LinearLayout>
