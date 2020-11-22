@@ -30,6 +30,7 @@ public class MainMenu extends AppCompatActivity {
                 //setContentView(R.layout.activity_main_game);
                 Intent gameIntent = new Intent(getApplicationContext(), MainGame.class);
                 startActivity(gameIntent);
+                setContentView(R.layout.activity_main_game);
             }
         });
     }

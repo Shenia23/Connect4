@@ -61,9 +61,10 @@
 
         <ImageButton
             android:id="@+id/back_button"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/back_arrow" />
+            android:layout_width="21dp"
+            android:layout_height="18dp"
+            android:background="@drawable/back_arrow"
+            android:onClick="goMenu" />
 
         <TextView
             android:id="@+id/game_time"
@@ -83,7 +84,8 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="right"
             android:layout_marginEnd="0dp"
-            android:background="@drawable/config_icon" />
+            android:background="@drawable/config_icon"
+            android:onClick="goSettings" />
 
     </RelativeLayout>
 
