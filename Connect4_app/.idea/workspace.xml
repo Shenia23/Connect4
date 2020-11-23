@@ -33,26 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82deba31-e8f9-4046-881f-7cc7a122423f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ai/AgenteDificil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ai/AgenteFacil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ai/AgenteMedio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ai/AiPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ai/Connect4_AgenteFacil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ai.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/green.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/green_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/green_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/red.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/red_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/red_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/violet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/violet_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/violet_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/yellow.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/yellow_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/yellow_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/tetris.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/game/Final.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -63,14 +44,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/Logic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/MainGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/ParametrosJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ParametrosJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/turn_shape.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ai_color.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_game.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_win.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_win.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,8 +68,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -258,6 +233,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="292" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1606129345644" />
+    <state x="466" y="233" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606132028833">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="466" y="233" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1606132028833" />
     <state x="137" y="249" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1606129353209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -282,22 +261,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606128817708" />
-    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1606124434702">
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1606133245398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606124434702" />
-    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1606124434702">
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606133245398" />
+    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1606133245398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606124434702" />
-    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1606124434702">
+    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606133245398" />
+    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1606133245397">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606124434702" />
-    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1606124434702">
+    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606133245397" />
+    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1606133245398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606124434702" />
+    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606133245398" />
     <state x="244" y="0" width="585" height="728" key="find.popup" timestamp="1606077673673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

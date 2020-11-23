@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundLilac">
+    android:background="@color/backgroundLilac"
+    tools:context=".Final">
 
 
     <LinearLayout
@@ -13,7 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="29dp">
+        tools:layout_editor_absoluteY="29dp"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imageView"
@@ -75,22 +77,26 @@
             tools:layout_editor_absoluteY="173dp" />
 
         <Button
+            android:id="@+id/play_another"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@color/backgroundYellow"
+            android:onClick="goPlay"
             android:text="Play Another Game"
             android:textColor="@color/textPurple"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/menu"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="3dp"
             android:background="@color/backgroundYellow"
+            android:onClick="goMenu"
             android:text="Back to Menu"
             android:textColor="@color/textPurple"
             android:textSize="18sp"

@@ -135,6 +135,24 @@ public class MainGame extends AppCompatActivity {
         updateMoveCount();
         if(!winner && current_turns<=MAX_TURNS) {
             ai_move();
+        }else if(winner){
+            //IR A PANTALLA FINAL COMO GANAR
+            Intent finIntent = new Intent(getApplicationContext(), Final.class);
+            finIntent.putExtra("ParametrosJuego", (Serializable) param);
+            getIntent().getSerializableExtra("ParametrosJuego");
+            finIntent.putExtra("RESULT", "Win");
+            getIntent().getStringExtra("RESULT");
+            startActivity(finIntent);
+            setContentView(R.layout.activity_win);
+
+        }else{
+            Intent finIntent = new Intent(getApplicationContext(), Final.class);
+            finIntent.putExtra("ParametrosJuego", (Serializable) param);
+            getIntent().getSerializableExtra("ParametrosJuego");
+            finIntent.putExtra("RESULT", "Tie");
+            getIntent().getStringExtra("RESULT");
+            startActivity(finIntent);
+            setContentView(R.layout.activity_win);
         }
     }
 
@@ -146,6 +164,24 @@ public class MainGame extends AppCompatActivity {
         updateMoveCount();
         if(!winner && current_turns<=MAX_TURNS) {
             turnSelector(true);
+        }else if(winner){
+            //IR A PANTALLA FINAL COMO PERDER
+            Intent finIntent = new Intent(getApplicationContext(), Final.class);
+            finIntent.putExtra("ParametrosJuego", (Serializable) param);
+            getIntent().getSerializableExtra("ParametrosJuego");
+            finIntent.putExtra("RESULT", "Lose");
+            getIntent().getStringExtra("RESULT");
+            startActivity(finIntent);
+            setContentView(R.layout.activity_win);
+        }else{
+            Intent finIntent = new Intent(getApplicationContext(), Final.class);
+            finIntent.putExtra("ParametrosJuego", (Serializable) param);
+            getIntent().getSerializableExtra("ParametrosJuego");
+            finIntent.putExtra("RESULT", "Tie");
+            getIntent().getStringExtra("RESULT");
+            startActivity(finIntent);
+            setContentView(R.layout.activity_win);
+
         }
 
     }
