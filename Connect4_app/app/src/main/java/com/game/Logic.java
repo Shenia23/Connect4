@@ -10,6 +10,10 @@ public class Logic {
         initBoard();
     }
 
+    public char[][] getTablero(){
+        return this.tablero;
+    }
+
     public void initBoard(){
         for (int fila = 0; fila < tablero.length; fila++) {
             for (int columna = 0; columna < tablero[0].length; columna++) {

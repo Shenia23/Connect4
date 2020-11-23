@@ -1,6 +1,7 @@
 package com.game;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.Random;
+import com.game.ai.AiPlayer;
+import java.io.Serializable;
 
 public class MainGame extends AppCompatActivity {
     private static final int N_COLS = 7;
@@ -18,13 +19,16 @@ public class MainGame extends AppCompatActivity {
 
     private ParametrosJuego param = new ParametrosJuego();
 
+    public  MediaPlayer mysong;
     private static char PLAYER = '+';
-    private static char AI = 'o';
+    private static char AI = '0';
+
+    private AiPlayer aiPlayer;
 
     boolean winner = false;
     Logic logic = new Logic();
     int MAX_TURNS = 42;
-    int current_turns = 1;
+    int current_turns = 0;
 
     LinearLayout gameLayout;
 
@@ -33,6 +37,8 @@ public class MainGame extends AppCompatActivity {
         buttonHome.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent gameIntent = new Intent(getApplicationContext(), MainMenu.class);
+                gameIntent.putExtra("ParametrosJuego", (Serializable) param);
+                getIntent().getSerializableExtra("ParametrosJuego");
                 startActivity(gameIntent);
                 setContentView(R.layout.activity_main);
             }
@@ -42,7 +48,11 @@ public class MainGame extends AppCompatActivity {
         ImageButton buttonSetting = findViewById(R.id.config_button);
         buttonSetting.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent gameIntent = new Intent(getApplicationContext(), MainMenu.class);
+                Intent gameIntent = new Intent(getApplicationContext(), Settings.class);
+                gameIntent.putExtra("ParametrosJuego", (Serializable) param);
+                gameIntent.putExtra("PREVIOUS_ACTIVITY", "MainGame");
+                getIntent().getStringExtra("PREVIOUS_ACTIVITY");
+                getIntent().getSerializableExtra("ParametrosJuego");
                 startActivity(gameIntent);
                 setContentView(R.layout.settings);
             }
@@ -52,15 +62,55 @@ public class MainGame extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent i = getIntent();
+        param = (ParametrosJuego)i.getSerializableExtra("ParametrosJuego");
         setContentView(R.layout.activity_main_game);
 
         gameLayout = findViewById(R.id.gameLayout);
+        ImageView yourColor = (ImageView) findViewById(R.id.PlayerTurnImage);
+        if(param==null){
+            param=new ParametrosJuego();
+        }else{
+            System.out.println(param.music);
+            if(param.music){
+                mysong= MediaPlayer.create(MainGame.this,R.raw.tetris);
+                mysong.start();
+            }
+
+            switch(param.selFicha){
+                case 0:
+                    yourColor.setBackgroundResource(R.drawable.green_color);
+                    break;
+                case 1:
+                    yourColor.setBackgroundResource(R.drawable.red_color);
+                    break;
+                case 2:
+                    yourColor.setBackgroundResource(R.drawable.yellow_color);
+                    break;
+                case 3:
+                    yourColor.setBackgroundResource(R.drawable.violet_color);
+                    break;
+            }
+        }
 
         setDifficultyLabel();
         setColumnSelector();
 
+        aiPlayer = param.getAiPlayer();
         first_move();
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mysong != null) {
+            mysong.pause();
+            if (isFinishing()) {
+                mysong.stop();
+                mysong.release();
+            }
+        }
     }
 
     protected void first_move(){
@@ -82,29 +132,18 @@ public class MainGame extends AppCompatActivity {
         turnSelector(false);
 
         winner = logic.ganador(PLAYER);
-        current_turns++;
+        updateMoveCount();
         if(!winner && current_turns<=MAX_TURNS) {
             ai_move();
         }
     }
 
     protected void ai_move(){
-        int max = N_COLS -1;
-        int min = 0;
-        Random r = new Random();
-        int col =  r.nextInt((max - min) + 1) + min;
-
-        int row = -1;
-        while(true) {
-            row = logic.validarJugada(col,AI);
-            if (row != -1) {
-                break;
-            }
-        }
-        displayPiece(col,row,true);
+        int[] move = aiPlayer.getAiMove(AI,logic);
+        displayPiece(move[0],move[1],true);
 
         winner = logic.ganador(AI);
-        current_turns++;
+        updateMoveCount();
         if(!winner && current_turns<=MAX_TURNS) {
             turnSelector(true);
         }
@@ -116,9 +155,22 @@ public class MainGame extends AppCompatActivity {
         LinearLayout column = (LinearLayout) gameLayout.getChildAt(col);
         ImageView piece = (ImageView) column.getChildAt(row);
         if(isAi) {
-            piece.setBackgroundResource(R.drawable.player2_shape);
+            piece.setBackgroundResource(R.drawable.ai);
         } else{
-            piece.setBackgroundResource(R.drawable.player1_shape);
+            switch(param.selFicha){
+                case 0:
+                    piece.setBackgroundResource(R.drawable.green);
+                    break;
+                case 1:
+                    piece.setBackgroundResource(R.drawable.red);
+                    break;
+                case 2:
+                    piece.setBackgroundResource(R.drawable.yellow);
+                    break;
+                case 3:
+                    piece.setBackgroundResource(R.drawable.violet);
+                    break;
+            }
         }
     }
 
@@ -173,6 +225,13 @@ public class MainGame extends AppCompatActivity {
         }
 
         return;
+    }
+
+    private void updateMoveCount() {
+        current_turns++;
+        TextView moveCount = findViewById(R.id.moveCount);
+        String moveLable = current_turns + " moves";
+        moveCount.setText(moveLable);
     }
 
 }

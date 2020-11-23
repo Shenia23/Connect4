@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFF5E9AB"
     android:clickable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainMenu">
 
     <LinearLayout
         android:layout_width="425dp"
@@ -93,12 +95,6 @@
             android:layout_height="wrap_content"
             android:text="Hard" />
 
-        <RadioButton
-            android:id="@+id/Impossible"
-            android:layout_width="wrap_content"
-            android:onClick="onRadioButtonDifClicked"
-            android:layout_height="wrap_content"
-            android:text="Impossible" />
 
     </RadioGroup>
 
@@ -124,7 +120,7 @@
             android:layout_height="84dp"
             android:layout_marginRight="20dp"
             android:onClick="onRadioButtonColorClicked"
-            android:background="@mipmap/ic_launcher_ficha2_round"
+            android:background="@drawable/green"
             android:button="@null" />
 
         <RadioButton
@@ -134,7 +130,7 @@
             android:layout_marginRight="20dp"
             android:id="@+id/ficharoj"
             android:onClick="onRadioButtonColorClicked"
-            android:background="@mipmap/ic_launcher_round"
+            android:background="@drawable/red"
             android:button="@null" />
 
 
@@ -144,8 +140,7 @@
             android:layout_height="84dp"
             android:onClick="onRadioButtonColorClicked"
             android:layout_marginRight="20dp"
-
-            android:background="@mipmap/ic_launcher_ficha1_round"
+            android:background="@drawable/yellow_selected"
             android:button="@null" />
 
         <RadioButton
@@ -153,7 +148,7 @@
             android:id="@+id/fichavio"
             android:onClick="onRadioButtonColorClicked"
             android:layout_height="84dp"
-            android:background="@mipmap/ic_launcher_ficha3_round"
+            android:background="@drawable/violet"
             android:button="@null" />
 
     </RadioGroup>

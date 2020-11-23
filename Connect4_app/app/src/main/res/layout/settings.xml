@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    android:background="#FFADB0DB">
+    android:background="#FFADB0DB"
+    tools:context=".Settings">
 
     <ImageView
 
@@ -34,14 +36,14 @@ android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:orientation="vertical">
 
-<RadioButton android:checked="true"
+<RadioButton
     android:id="@+id/MusicOn"
     android:onClick="onRadioButtonMusicClicked"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="ON" />
 
-    <RadioButton
+    <RadioButton android:checked="true"
     android:id="@+id/MusicOff"
         android:onClick="onRadioButtonMusicClicked"
     android:layout_width="wrap_content"
@@ -132,6 +134,7 @@ android:orientation="vertical">
         android:text="@string/record" />
     <Button
         android:id="@+id/bsave"
+        android:background="@color/white"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="6dp"
@@ -140,6 +143,7 @@ android:orientation="vertical">
         android:onClick="goMainfromSettingsSave"/>
     <Button
         android:id="@+id/bback"
+        android:background="@color/white"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="6dp"

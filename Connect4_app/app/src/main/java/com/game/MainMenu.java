@@ -9,18 +9,88 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.content.Intent;
 
+import java.io.Serializable;
+
 public class MainMenu extends AppCompatActivity {
-    ParametrosJuego paramJug;
+    ParametrosJuego paramJug= new ParametrosJuego();
+
+
+    boolean darktheme =false;
+    int selFicha =0;
+    int gameDifficulty =0;
+
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        paramJug=new ParametrosJuego();
+        Intent i = getIntent();
+         paramJug = (ParametrosJuego)i.getSerializableExtra("ParametrosJuego");
         setContentView(R.layout.activity_main);
+        if(paramJug==null){
+            paramJug=new ParametrosJuego();
+        }else{
+            switch(paramJug.gameDifficulty){
+                case 1:
+                    ((RadioButton) findViewById(R.id.Easy)).setChecked(true);
+                    ((RadioButton) findViewById(R.id.Medium)).setChecked(false);
+                    ((RadioButton) findViewById(R.id.Hard)).setChecked(false);
+                    break;
+
+                case 2:
+                    ((RadioButton) findViewById(R.id.Easy)).setChecked(false);
+                    ((RadioButton) findViewById(R.id.Medium)).setChecked(true);
+                    ((RadioButton) findViewById(R.id.Hard)).setChecked(false);
+                    break;
+
+                case 3:
+                    ((RadioButton) findViewById(R.id.Easy)).setChecked(false);
+                    ((RadioButton) findViewById(R.id.Medium)).setChecked(false);
+                    ((RadioButton) findViewById(R.id.Hard)).setChecked(true);
+                    break;
+
+            }
+
+            RadioButton fichaverde_imagen = (RadioButton) findViewById(R.id.fichaver);
+            RadioButton ficharoja_imagen = (RadioButton) findViewById(R.id.ficharoj);
+            RadioButton fichaamarilla_imagen = (RadioButton) findViewById(R.id.fichaama);
+            RadioButton fichavioleta_imagen = (RadioButton) findViewById(R.id.fichavio);
+
+            switch(paramJug.selFicha) {
+                case 0:
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green_selected);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet);
+                    break;
+                case 1:
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red_selected);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet);
+                    break;
+                case 2:
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow_selected);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet);
+                    break;
+                case 3:
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet_selected);
+                    break;
+            }
+
+            ((RadioButton) findViewById(R.id.LightTheme)).setChecked(!paramJug.darktheme);
+            ((RadioButton) findViewById(R.id.Darktheme)).setChecked(paramJug.darktheme);
+
+        }
     }
 
     public void goGame(View view) {
@@ -29,6 +99,8 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View v) {
                 //setContentView(R.layout.activity_main_game);
                 Intent gameIntent = new Intent(getApplicationContext(), MainGame.class);
+                gameIntent.putExtra("ParametrosJuego", (Serializable) paramJug);
+                getIntent().getSerializableExtra("ParametrosJuego");
                 startActivity(gameIntent);
                 setContentView(R.layout.activity_main_game);
             }
@@ -39,30 +111,18 @@ public class MainMenu extends AppCompatActivity {
         ImageButton button =  findViewById(R.id.settings);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Intent gameIntent = new Intent(getApplicationContext(), Settings.class);
+                gameIntent.putExtra("ParametrosJuego", (Serializable) paramJug);
+                gameIntent.putExtra("PREVIOUS_ACTIVITY", (String)"MainMenu");
+                getIntent().getStringExtra("PREVIOUS_ACTIVITY");
+                getIntent().getSerializableExtra("ParametrosJuego");
+                startActivity(gameIntent);
 
                 setContentView(R.layout.settings);
             }
         });
     }
-    public void goMainfromSettingsSave(View view){
-        Button button =  findViewById(R.id.bsave);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                setContentView(R.layout.activity_main);
-            }
-        });
-
-    }
-    public void goMainfromSettingsBack(View view){
-        Button button =  findViewById(R.id.bback);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                setContentView(R.layout.activity_main);
-            }
-        });
-    }
     public void showPopupWindowInfo(View view) {
         LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = layoutInflater.inflate(R.layout.popupinfoautor, null);
@@ -111,10 +171,6 @@ public class MainMenu extends AppCompatActivity {
                 if (checked)
                     paramJug.selHard();
                     break;
-            case R.id.Impossible:
-                if (checked)
-                    paramJug.selImpossible();
-                    break;
         }
     }
     public void onRadioButtonColorClicked(View view) {
@@ -122,23 +178,48 @@ public class MainMenu extends AppCompatActivity {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
+        RadioButton fichaverde_imagen = (RadioButton) findViewById(R.id.fichaver);
+        RadioButton ficharoja_imagen = (RadioButton) findViewById(R.id.ficharoj);
+        RadioButton fichaamarilla_imagen = (RadioButton) findViewById(R.id.fichaama);
+        RadioButton fichavioleta_imagen = (RadioButton) findViewById(R.id.fichavio);
+
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.fichaama:
-                if (checked)
+            case R.id.fichaver:
+                if (checked) {
                     paramJug.seleccionFicha(0);
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green_selected);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet);
+                }
                 break;
             case R.id.ficharoj:
-                if (checked)
+                if (checked) {
                     paramJug.seleccionFicha(1);
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red_selected);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet);
+                }
                 break;
-            case R.id.fichaver:
-                if (checked)
+            case R.id.fichaama:
+                if (checked) {
                     paramJug.seleccionFicha(2);
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow_selected);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet);
+                }
                 break;
             case R.id.fichavio:
-                if (checked)
+                if (checked) {
                     paramJug.seleccionFicha(3);
+                    fichaverde_imagen.setBackgroundResource(R.drawable.green);
+                    ficharoja_imagen.setBackgroundResource(R.drawable.red);
+                    fichaamarilla_imagen.setBackgroundResource(R.drawable.yellow);
+                    fichavioleta_imagen.setBackgroundResource(R.drawable.violet_selected);
+                }
                 break;
         }
     }
@@ -161,62 +242,6 @@ public class MainMenu extends AppCompatActivity {
         }
 
     }
-    public void onRadioButtonMusicClicked(View view) {
 
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.MusicOff:
-                if (checked)
-                    paramJug.disMusic();
-                break;
-            case R.id.MusicOn:
-                if (checked)
-                    paramJug.enMusic();
-                break;
-
-        }
-
-    }
-    public void onRadioButtonSoundsClicked(View view) {
-
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.SEoff:
-                if (checked)
-                    paramJug.enSounds();
-                break;
-            case R.id.SEon:
-                if (checked)
-                    paramJug.disSounds();
-                break;
-
-        }
-
-    }
-    public void onRadioButtonTimeClicked(View view) {
-
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.Toff:
-                if (checked)
-                    paramJug.disTime();
-                break;
-            case R.id.Ton:
-                if (checked)
-                    paramJug.enTime();
-                break;
-
-        }
-
-    }
 
 }
