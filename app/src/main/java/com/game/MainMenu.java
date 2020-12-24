@@ -37,8 +37,8 @@ public class MainMenu extends AppCompatActivity {
             }else{
                 setTheme(R.style.mainLight);
             }
-            setContentView(R.layout.activity_main);
             mp=MediaPlayer.create(this,R.raw.click);
+            setContentView(R.layout.activity_main);
             inicializarMenu();
 
         }

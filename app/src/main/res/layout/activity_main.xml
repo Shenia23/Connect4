@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
     android:background="?attr/colorPrimary"
     android:clickable="true"
     android:orientation="vertical"
@@ -20,10 +22,11 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="left"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="127dp"
             android:background="@mipmap/info_foreground"
-            android:onClick="showPopupWindowInfo" />
+            android:onClick="showPopupWindowInfo"
+            />
 
         <ImageButton
             android:id="@+id/rules"
@@ -32,7 +35,7 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:layout_marginVertical="10dp"
-            android:layout_marginRight="120dp"
+            android:layout_marginRight="127dp"
             android:onClick="showPopupWindowRules"
             android:background="@mipmap/rules_foreground" />
 
@@ -50,6 +53,7 @@
 
 
     <ImageView
+        android:layout_marginTop="10dip"
         android:layout_width="187dp"
         android:layout_height="117dp"
         android:layout_gravity="center"
@@ -57,18 +61,17 @@
         android:src="@mipmap/ic_launcher_foreground" />
 
 
-
-
     <TextView
+        android:layout_marginTop="10dip"
         android:id="@+id/text_view_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_view"
         android:gravity="center_horizontal"
-        android:background="?attr/colorPrimaryDark"
         android:text="@string/SelectGameDifficulty"
-        android:textColor="?attr/color"
         android:textAlignment="center"
-        android:textSize="22dp" />
+        android:textColor="?attr/color"
+        android:textSize="22dp"/>
 
 
     <RadioGroup
@@ -109,11 +112,12 @@
 
 
     <TextView
+        android:layout_marginTop="10dip"
         android:id="@+id/selection2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_view"
         android:gravity="center_horizontal"
-        android:background="?attr/colorPrimaryDark"
         android:text="@string/SelectColor"
         android:textAlignment="center"
         android:textColor="?attr/color"
@@ -137,8 +141,8 @@
 
         <RadioButton
             android:id="@+id/fichaver"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/green"
             android:button="@null"
@@ -148,8 +152,8 @@
         <RadioButton
 
             android:id="@+id/ficharoj"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/red"
             android:button="@null"
@@ -159,8 +163,8 @@
 
         <RadioButton
             android:id="@+id/fichaama"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/yellow_selected"
             android:button="@null"
@@ -169,8 +173,8 @@
 
         <RadioButton
             android:id="@+id/fichavio"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
             android:background="@drawable/violet"
             android:button="@null"
             android:checked="false"
@@ -180,15 +184,16 @@
     </RelativeLayout>
 
     <TextView
+        android:layout_marginTop="10dip"
         android:id="@+id/selection3"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:background="@drawable/text_view"
         android:gravity="center_horizontal"
         android:text="@string/SelectTheme"
         android:textAlignment="center"
-        android:background="?attr/colorPrimaryDark"
         android:textColor="?attr/color"
         android:textSize="22dp" />
 
@@ -216,10 +221,11 @@
     </RadioGroup>
 
     <Button
+        android:layout_marginTop="20dip"
         android:id="@+id/bSearch"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimaryDark"
+        android:background="@drawable/text_view"
         android:padding="12dp"
         android:text="Play"
         android:onClick="goGame"

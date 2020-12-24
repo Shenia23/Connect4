@@ -32,7 +32,29 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82deba31-e8f9-4046-881f-7cc7a122423f" name="Default" comment="" />
+    <list default="true" id="82deba31-e8f9-4046-881f-7cc7a122423f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/text_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/green.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/green.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/green_selected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/green_selected.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/red.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/red.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/red_selected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/red_selected.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/violet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/violet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/violet_selected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/violet_selected.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/yellow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/yellow.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/yellow_selected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/yellow_selected.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +82,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kblnuQhjJJQHsYF1gEFm8tjXbC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -78,20 +100,21 @@
     <property name="android.recentlyUsedThemes" value="android:Theme.Material" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="device.picker.selection" value="Connect4_device" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.game" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Aurora Paz\Desktop\Connect4\Connect4_app\app\src\main\java\com\game" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Aurora Paz\Desktop\Connect4-master\app\src\main\res\raw" />
       <recent name="C:\Users\Aurora Paz\Desktop\Connect4\Connect4_app\app\src\main\res\raw" />
       <recent name="C:\Users\Aurora Paz\Desktop\Connect4\Connect4_app\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.game" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Aurora Paz\Desktop\Connect4-master\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\Aurora Paz\Desktop\Connect4\Connect4_app\app\src\main\java\com\game" />
     </key>
   </component>
   <component name="RunManager">
@@ -254,26 +277,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606560985614" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1608671704141">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1608812421854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608671704141" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1608671704140">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608812421854" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1608812421854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1608671704140" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1608671704140">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1608812421854" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1608812421854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1608671704140" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1608671704141">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1608812421854" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1608812421854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1608671704141" />
-    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1606573040465">
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1608812421854" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1608811908764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1606573040465" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1608811908764" />
     <state x="471" y="221" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1607281195626">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -282,20 +305,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="244" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1606077673673" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1608753820569">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608753820569" />
     <state x="339" y="21" width="672" height="676" key="search.everywhere.popup" timestamp="1606561758198">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="21" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606561758198" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/game/MainGame.java</url>
-          <line>262</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
