@@ -24,8 +24,8 @@ public class ParametrosJuego extends AppCompatActivity implements Serializable {
     private int aiColor = R.color.textPurple;
     private int playerColor = R.color.fichaamarilla;
 
-    private static final int MINMAX_MEDIUM_DEPTH = 3;
-    private static final int MINMAX_HARD_DEPTH = 5;
+    private static final int MINMAX_MEDIUM_DEPTH = 5;
+    private static final int MINMAX_HARD_DEPTH = 8;
 
     public ParametrosJuego(){
         music =false;
