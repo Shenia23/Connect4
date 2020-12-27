@@ -194,12 +194,12 @@ public class MainGame extends AppCompatActivity {
         }
         turnSelector(false);
         displayPiece(col,row,false);
+        if(timer)countDownTimer.cancel();
+        setcounter(param.gameDifficulty);
     }
 
     protected void ai_move(){
         if(param.sounds){ mp.start();}
-        if(timer)countDownTimer.cancel();
-        setcounter(param.gameDifficulty);
         int[] move = aiPlayer.getAiMove(AI,logic);
         Logic.actualizarTablero(logic.getTablero());
         displayPiece(move[0],move[1],true);
