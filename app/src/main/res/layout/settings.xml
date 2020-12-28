@@ -123,6 +123,7 @@ android:orientation="vertical">
 
     </RadioGroup>
 
+    <!--
     <TextView
         android:layout_marginTop="10dip"
         android:id="@+id/Label4"
@@ -142,6 +143,9 @@ android:orientation="vertical">
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/record" />
+
+    -->
+
     <Button
         android:layout_marginTop="20dip"
         android:id="@+id/bsave"
