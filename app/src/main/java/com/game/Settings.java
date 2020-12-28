@@ -16,6 +16,7 @@ public class Settings extends AppCompatActivity {
     ParametrosJuego paramJug = new ParametrosJuego();
     ParametrosJuego paramJug2 = new ParametrosJuego();
     String previousActivity="";
+    char[][] tablero;
     MediaPlayer mp;
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -28,7 +29,10 @@ public class Settings extends AppCompatActivity {
         paramJug2.darktheme=paramJug.darktheme;
         paramJug2.selFicha=paramJug.selFicha;
         paramJug2.gameDifficulty=paramJug.gameDifficulty;
+        paramJug2.seleccionFicha(paramJug.selFicha);
         previousActivity= i.getStringExtra("PREVIOUS_ACTIVITY");
+        tablero= (char[][]) i.getSerializableExtra("TABLE");
+
         if(paramJug==null){
             paramJug=new ParametrosJuego();
         }else{
@@ -74,7 +78,11 @@ public class Settings extends AppCompatActivity {
                 }else{
                     Intent gameIntent = new Intent(getApplicationContext(), MainGame.class);
                     gameIntent.putExtra("ParametrosJuego", (Serializable) paramJug2);
+                    Bundle mBundle = new Bundle();
+                    mBundle.putSerializable("TABLE",  tablero);
+                    gameIntent.putExtras(mBundle);
                     getIntent().getSerializableExtra("ParametrosJuego");
+                    getIntent().getSerializableExtra("TABLE");
                     startActivity(gameIntent);
                     if(paramJug.darktheme){
                         setTheme(R.style.gameDark);
@@ -107,7 +115,11 @@ public class Settings extends AppCompatActivity {
                 }else{
                     Intent gameIntent = new Intent(getApplicationContext(), MainGame.class);
                     gameIntent.putExtra("ParametrosJuego", (Serializable) paramJug);
+                    Bundle mBundle = new Bundle();
+                    mBundle.putSerializable("TABLE",  tablero);
+                    gameIntent.putExtras(mBundle);
                     getIntent().getSerializableExtra("ParametrosJuego");
+                    getIntent().getSerializableExtra("TABLE");
                     startActivity(gameIntent);
                     if(paramJug.darktheme){
                         setTheme(R.style.gameDark);

@@ -98,7 +98,7 @@ public class ParametrosJuego extends AppCompatActivity implements Serializable {
                 playerColor = R.color.ficharoja;
                 break;
             case 2:
-                playerColor = R.color.colorOrange;
+                playerColor = R.color.fichaamarilla;
                 break;
             case 3:
                 playerColor = R.color.fichaoscura;

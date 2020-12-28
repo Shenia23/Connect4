@@ -31,6 +31,11 @@ public class Logic {
         return this.tablero;
     }
 
+    public void setTablero(char[][] tablero){
+        this.tablero=tablero;
+        return;
+    }
+
     public char[][] getReverseBoardCopy(){
         char [][] tableroaux=new char[7][6];
         for(int col = 0; col < 7; col++) {

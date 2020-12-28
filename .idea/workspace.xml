@@ -33,18 +33,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82deba31-e8f9-4046-881f-7cc7a122423f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/Logic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/ParametrosJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/ParametrosJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/game/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/game/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[MOVIL_VIRT]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -261,22 +261,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606560985614" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1609068596798">
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom" timestamp="1609160866233">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609068596798" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1609068596798">
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609160866233" />
+    <state width="1323" height="200" key="GridCell.Tab.0.center" timestamp="1609160866232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1609068596798" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1609068596798">
+    <state width="1323" height="200" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1609160866232" />
+    <state width="1323" height="200" key="GridCell.Tab.0.left" timestamp="1609160866232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1609068596798" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1609068596798">
+    <state width="1323" height="200" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1609160866232" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right" timestamp="1609160866233">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1609068596798" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1609160866233" />
     <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1608811908764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -293,9 +293,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608753820569" />
-    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup" timestamp="1606561758198">
+    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup" timestamp="1609158434068">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606561758198" />
+    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609158434068" />
   </component>
 </project>

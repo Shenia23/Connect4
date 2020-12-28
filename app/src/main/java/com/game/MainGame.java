@@ -46,7 +46,6 @@ public class MainGame extends AppCompatActivity {
     int MAX_TURNS = 42;
     int current_turns = 0;
     LinearLayout gameLayout;
-
     public void goMenu(View view) {
         if(timer){countDownTimer.cancel();}
         ImageButton buttonHome = findViewById(R.id.back_button);
@@ -61,17 +60,22 @@ public class MainGame extends AppCompatActivity {
         });
     }
     public void goSettings(View view) {
+
         if(timer){countDownTimer.cancel();}
         ImageButton buttonSetting = findViewById(R.id.config_button);
         buttonSetting.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(param.sounds){ mp.start();}
-                Intent gameIntent = new Intent(getApplicationContext(), Settings.class);
-                gameIntent.putExtra("ParametrosJuego", (Serializable) param);
-                gameIntent.putExtra("PREVIOUS_ACTIVITY", "MainGame");
-                getIntent().getStringExtra("PREVIOUS_ACTIVITY");
-                getIntent().getSerializableExtra("ParametrosJuego");
-                startActivity(gameIntent);
+                    Intent gameIntent = new Intent(getApplicationContext(), Settings.class);
+                    gameIntent.putExtra("ParametrosJuego", (Serializable) param);
+                    gameIntent.putExtra("PREVIOUS_ACTIVITY", "MainGame");
+                    Bundle mBundle = new Bundle();
+                    mBundle.putSerializable("TABLE", logic.getTablero());
+                    gameIntent.putExtras(mBundle);
+                    getIntent().getStringExtra("PREVIOUS_ACTIVITY");
+                    getIntent().getSerializableExtra("ParametrosJuego");
+                    getIntent().getSerializableExtra("TABLE");
+                    startActivity(gameIntent);
             }
         });
     }
@@ -92,10 +96,10 @@ public class MainGame extends AppCompatActivity {
         mp=MediaPlayer.create(this,R.raw.click);
         Intent i = getIntent();
         param = (ParametrosJuego)i.getSerializableExtra("ParametrosJuego");
+        char [][] tablero=null;
         if(param==null){
             param=new ParametrosJuego();
         }else{
-            System.out.println(param.music);
             if(param.music){
                 mysong= MediaPlayer.create(MainGame.this,R.raw.game);
                 mysong.start();
@@ -124,13 +128,31 @@ public class MainGame extends AppCompatActivity {
                     yourColor.setBackgroundResource(R.drawable.violet_color);
                     break;
             }
+            tablero= (char[][]) i.getSerializableExtra("TABLE");
+            if(tablero!=null){
+                logic.setTablero(tablero);
+                for (int fila = 0; fila < tablero.length; fila++) {
+                    for (int columna = 0; columna < tablero[0].length; columna++) {
+                        if(tablero[fila][columna]==PLAYER){
+                            updateMoveCount();
+                            displayPieceInit(columna,fila,false,0);
+                        }else if(tablero[fila][columna]==AI){
+                            updateMoveCount();
+                            displayPieceInit(columna,fila,true,0);
+                        }
+                    }
+                }
+            }
         }
 
         setDifficultyLabel();
         setColumnSelector();
 
         aiPlayer = param.getAiPlayer();
-        first_move();
+        if(lastTurn==AI && tablero!=null)first_move();
+        if(tablero==null){
+            first_move();
+        }
 
     }
 
@@ -174,6 +196,7 @@ public class MainGame extends AppCompatActivity {
                 turnSelector(true);
             }
         }
+
         /**
          if(winner && lastTurn==AI){
          goFinal("Lose");
@@ -193,7 +216,7 @@ public class MainGame extends AppCompatActivity {
             return;
         }
         turnSelector(false);
-        displayPiece(col,row,false);
+        displayPiece(col,row,false,500);
         if(timer)countDownTimer.cancel();
         setcounter(param.gameDifficulty);
     }
@@ -202,11 +225,12 @@ public class MainGame extends AppCompatActivity {
         if(param.sounds){ mp.start();}
         int[] move = aiPlayer.getAiMove(AI,logic);
         Logic.actualizarTablero(logic.getTablero());
-        displayPiece(move[0],move[1],true);
+        displayPiece(move[0],move[1],true,500);
     }
 
 
-    protected void displayPiece(int col, int row, boolean isAi){
+    protected void displayPiece(int col, int row, boolean isAi,int time){
+
         LinearLayout column = (LinearLayout) gameLayout.getChildAt(col);
         ImageView piece = (ImageView) column.getChildAt(row);
         int animationColor;
@@ -223,7 +247,7 @@ public class MainGame extends AppCompatActivity {
         }
         ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(),
                 getColor(colorAnimacion), getColor(animationColor));
-        colorAnimation.setDuration(800); // milliseconds
+        colorAnimation.setDuration(time); // milliseconds
         StateListDrawable state_drawable = (StateListDrawable) piece.getBackground();
         DrawableContainer.DrawableContainerState dcs = (DrawableContainer.DrawableContainerState) state_drawable.getConstantState();
         Drawable[] drawableItems = dcs.getChildren();
@@ -247,8 +271,44 @@ public class MainGame extends AppCompatActivity {
             }
         });
         colorAnimation.start();
-
     }
+
+
+    protected void displayPieceInit(int col, int row, boolean isAi,int time){
+        LinearLayout column = (LinearLayout) gameLayout.getChildAt(col);
+        ImageView piece = (ImageView) column.getChildAt(row);
+        int animationColor;
+        if(isAi) {
+            animationColor = param.getAiColor();
+        } else{
+            animationColor = param.getPlayerColor();
+        }
+        int colorAnimacion;
+        if(param.darktheme){
+            colorAnimacion=R.color.backgroundLilac;
+        }else{
+            colorAnimacion=R.color.backgroundWhite;
+        }
+        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(),
+                getColor(colorAnimacion), getColor(animationColor));
+        colorAnimation.setDuration(time); // milliseconds
+        StateListDrawable state_drawable = (StateListDrawable) piece.getBackground();
+        DrawableContainer.DrawableContainerState dcs = (DrawableContainer.DrawableContainerState) state_drawable.getConstantState();
+        Drawable[] drawableItems = dcs.getChildren();
+        final GradientDrawable background = (GradientDrawable) drawableItems[0]; // item 1
+
+        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+            @Override
+            public void onAnimationUpdate(ValueAnimator animator) {
+                background.setColor((int) animator.getAnimatedValue());
+            }
+
+
+        });
+        colorAnimation.start();
+    }
+
 
     protected void winAnimation(){
         int animationColor;
@@ -277,7 +337,7 @@ public class MainGame extends AppCompatActivity {
             DrawableContainer.DrawableContainerState dcs = (DrawableContainer.DrawableContainerState) state_drawable.getConstantState();
             Drawable[] drawableItems = dcs.getChildren();
             final GradientDrawable background = (GradientDrawable) drawableItems[0];
-            winAnim.setDuration(800);
+            winAnim.setDuration(500);
             winAnim.setRepeatCount(3);
             winAnim.setRepeatMode(ValueAnimator.REVERSE);
             winAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
