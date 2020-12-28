@@ -125,4 +125,12 @@ public class Final extends AppCompatActivity {
         });
 
     }
+
+    public void resetStats(View view){
+        playerStats = new Jugador();
+        playerStats.saveSerializable(getApplicationContext());
+
+        ((TextView) findViewById(R.id.winStats)).setText("Wins: 0");
+        ((TextView) findViewById(R.id.loseStats)).setText("Losses: 0");
+    }
 }
