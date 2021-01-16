@@ -380,7 +380,7 @@ public class MainGame extends AppCompatActivity {
                 break;
             case 1:
                 timer=true;
-                countDownTimer = new CountDownTimer(40000, 1000) {
+                countDownTimer = new CountDownTimer(25000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         textView.setText(""+String.format("%d sec",TimeUnit.MILLISECONDS.toMinutes( millisUntilFinished)));
                     }
@@ -391,7 +391,7 @@ public class MainGame extends AppCompatActivity {
                 break;
             case 2:
                 timer=true;
-                countDownTimer = new CountDownTimer(20000, 1000) {
+                countDownTimer = new CountDownTimer(10000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         textView.setText("" + String.format("%d sec", TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
                     }
@@ -455,7 +455,7 @@ public class MainGame extends AppCompatActivity {
         else{
 
             if(w==1){
-                countDownTimer = new CountDownTimer(40000, 1000) {
+                countDownTimer = new CountDownTimer(25000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         textView.setText(""+String.format("%d sec", TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)));
                     }
@@ -465,7 +465,7 @@ public class MainGame extends AppCompatActivity {
                 }.start();
             }
             else{
-                countDownTimer = new CountDownTimer(20000, 1000) {
+                countDownTimer = new CountDownTimer(10000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         textView.setText(""+String.format("%d sec", TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)));}
                     public void onFinish() {
