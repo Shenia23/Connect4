@@ -99,6 +99,7 @@ public class Final extends AppCompatActivity {
                 }
                     setContentView(R.layout.activity_main_game);
                 */
+                mysongWinorLose.stop();
             }
         });
 
@@ -121,6 +122,7 @@ public class Final extends AppCompatActivity {
                 }
                 setContentView(R.layout.activity_main);
                 */
+                mysongWinorLose.stop();
             }
         });
 
